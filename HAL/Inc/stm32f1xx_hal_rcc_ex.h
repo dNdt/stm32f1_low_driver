@@ -1228,7 +1228,7 @@ typedef struct
  || defined(STM32F103xE) || defined(STM32F103xG) || defined(STM32F105xC)\
  || defined(STM32F107xC)
 #define __HAL_RCC_GPIOE_CLK_ENABLE()   do { \
-                                        __IO uint32_t tmpreg; \
+                                        uint32_t tmpreg; \
                                         SET_BIT(RCC->APB2ENR, RCC_APB2ENR_IOPEEN);\
                                         /* Delay after an RCC peripheral clock enabling */ \
                                         tmpreg = READ_BIT(RCC->APB2ENR, RCC_APB2ENR_IOPEEN);\
