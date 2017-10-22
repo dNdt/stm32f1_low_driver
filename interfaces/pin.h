@@ -3,7 +3,7 @@
 #ifdef __cplusplus
 
 #include "stm32f1xx_hal_conf.h"
-#include "mk_hardware_interfaces_pin.h"
+#include "mc_hardware_interfaces_pin.h"
 
 #ifdef HAL_GPIO_MODULE_ENABLED
 class pin : public pin_base {
