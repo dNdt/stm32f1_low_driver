@@ -407,7 +407,7 @@ typedef struct
   * @{   
   */
 #define __HAL_RCC_TIM2_CLK_ENABLE()   do { \
-                                        __IO uint32_t tmpreg; \
+                                         uint32_t tmpreg; \
                                         SET_BIT(RCC->APB1ENR, RCC_APB1ENR_TIM2EN);\
                                         /* Delay after an RCC peripheral clock enabling */\
                                         tmpreg = READ_BIT(RCC->APB1ENR, RCC_APB1ENR_TIM2EN);\
