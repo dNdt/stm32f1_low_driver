@@ -22,7 +22,13 @@ void pwm_clock_en( TIM_TypeDef *TIMx){
 void pwm::init(){
 	pwm_clock_en(cfg->TIMx);
 	cfg->pwmPin->init();
-	uint32_t one_tick = cfg->period_pwm *72; // APB2_clock = 72 000 000
+	uint32_t one_tick = 0;
+	if(cfg->TIMx == TIM1){
+		 one_tick = cfg->period_pwm *72; // APB2_clock = 72 000 000
+	}
+	else if(cfg->TIMx == TIM2){
+		 one_tick = cfg->period_pwm *36; // APB2_clock = 72 000 000
+	}
 	uint16_t prescaler = one_tick/0xFFFF;
 	htim_pwm.Instance =  cfg->TIMx;
 	htim_pwm.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
