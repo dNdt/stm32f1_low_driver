@@ -9,6 +9,9 @@
 #include "sys_clock.h"
 #include "stm32f1xx_hal_conf.h"
 
+using namespace SYSCLOCK;
+
+
 result sysclock::init(){
 	if(this->cfg->sysclock > 72000000 || this->cfg->apb1clock > 36000000 || this->cfg->apb2clock > 72000000){
 		return ERR;

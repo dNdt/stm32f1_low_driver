@@ -8,7 +8,7 @@
 #include "pwm.h"
 #include "string.h"
 
-void pwm_clock_en( TIM_TypeDef *TIMx){
+static void pwm_clock_en( TIM_TypeDef *TIMx){
 	switch( (uint32_t) TIMx){
 #ifdef TIM1
 	case TIM1_BASE: __HAL_RCC_TIM1_CLK_ENABLE(); break;
